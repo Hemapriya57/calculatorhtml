@@ -31,7 +31,8 @@
           
     }
     input{
-    grid-column:span 4;
+        #control how many grid columns a grid item spans (i.e., occupies) within a grid container.
+    grid-column:span 4; 
     height:50px;
     border-radius:20px;
     text-align:right;
@@ -85,6 +86,7 @@
     </body>
     <script>
         let outputScreen=document.getElementById("hema");
+        //The display function is called with num
         function display(num){
             outputScreen.value=outputScreen.value+num;
         }
