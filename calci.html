@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+<!--<link rel="calculatorsheet" href="calculator">-->
+<style>
+    *{
+        margin:0;
+    padding:0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:whitesmoke;
+    outline:none;
+    }
+    .container{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        }
+    .calculator{
+        background-color:#d8eeff;
+        padding:70px;
+        box-shadow:inset 7px 7px 9px rgb(168, 231, 244),
+                         7px 7px 9px rgb(168, 231, 244);
+
+        display:grid;
+        grid-template-columns:repeat(4,50px);
+        border-radius: 10px;
+          
+    }
+    input{
+    grid-column:span 4;
+    height:50px;
+    border-radius:20px;
+    text-align:right;
+    font-size:30px;
+    padding:10px;
+    margin-bottom:20px;
+    border:none;
+
+    }
+    button{
+        height:40px;
+        width:40px;
+        margin:10px;
+        border-radius:5px;
+        background-color:rgb(168, 231, 244);
+        box-shadow:inset -5px -5px 9px rgb(168, 231, 244),
+                         5px 5px 9px rgb(168, 231, 244);
+         border:none;
+        font-size:20px;
+        
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+    <input type="text" placeholder="Enter The No" id="hema"> 
+    <audio id="beep()" src=" C:\Users\hemap\Downloads\shooting-sound-fx-159024.mp3 onclick="answer.input.value += "1"> </audio> 
+    <button onclick="cl()"> C</button>
+    <button onclick="display('%')"> %</button>
+    <button onclick="del()"> DEL</button>
+    <button onclick="display('/')"> / </button>
+    <button onclick="display('7')"> 7 </button>
+    <button onclick="display('8')"> 8 </button>
+    <button onclick="display('9')"> 9 </button>
+    <button onclick="display('*')"> * </button>
+    <button onclick="display('4')"> 4 </button>
+    <button onclick="display('5')"> 5 </button>
+    <button onclick="display('6')"> 6</button>
+    <button onclick="display('-')"> - </button>
+    <button onclick="display('1')"> 1 </button>
+    <button onclick="display('2')"> 2 </button>
+    <button onclick="display('3')"> 3 </button>
+    <button onclick="display('+')"> + </button>
+    <button onclick="display('00')"> 00</button>
+    <button onclick="display('0')" > 0</button>
+    <button onclick="display('.')"> .</button>
+    <button onclick="xyz()"> =</button>
+</div>
+</div>
+    </body>
+    <script>
+        let outputScreen=document.getElementById("hema");
+        function display(num){
+            outputScreen.value=outputScreen.value+num;
+        }
+        function beep(){
+            document.getElementById("beep").play();
+        }
+        function xyz(){
+            try{
+                outputScreen.value=eval(outputScreen.value)
+            }
+            catch(error){
+                alert("invalid")
+            }
+
+        }
+        function cl(){
+            outputScreen.value=""
+        }
+        function del(){
+            outputScreen.value=outputScreen.value.slice(0,-1);   //deleting the no by 1 digit
+        }
+
+
+    </script>
+</html>
